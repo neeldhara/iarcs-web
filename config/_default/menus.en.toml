@@ -1,0 +1,136 @@
+# main menu
+[[main]]
+name = "Home"
+url = ""
+weight = 10
+
+[[main]]
+name = "Activities"
+hasChildren = true
+url = ""
+weight = 20
+
+
+[[main]]
+parent = "Activities"
+name = "Conferences and Workshops"
+url = "activities/conferences-workshops/"
+weight = 21
+
+
+[[main]]
+parent = "Activities"
+name = "Teacher Training"
+url = "activities/teacher-training/"
+weight = 22
+
+
+[[main]]
+parent = "Activities"
+name = "Travel Grants"
+url = "activities/travel-grants/"
+weight = 23
+
+
+[[main]]
+parent = "Activities"
+name = "Lecture Notes"
+url = "activities/lecture-notes/"
+weight = 24
+
+
+[[main]]
+name = "Olympiad"
+url = "olympiad/"
+weight = 30
+
+[[main]]
+name = "Members"
+url = "members/"
+weight = 40
+
+[[main]]
+name = "About"
+url = ""
+weight = 50
+hasChildren = true
+
+
+[[main]]
+parent = "About"
+name = "Overview"
+url = "about/overview/"
+weight = 51
+
+
+[[main]]
+parent = "About"
+name = "Council"
+url = "about/council/"
+weight = 52
+
+
+# footer menu left
+[[footer_left]]
+name = "Conferences and Workshops"
+url = "activities/conferences-workshops/"
+weight = 1
+
+[[footer_left]]
+name = "Teacher Training"
+url = "activities/teacher-training/"
+weight = 2
+
+[[footer_left]]
+name = "Travel Grants"
+url = "activities/travel-grants/"
+weight = 3
+
+
+[[footer_left]]
+name = "Lecture Notes"
+url = "activities/lecture-notes/"
+weight = 4
+
+
+# footer menu middle
+[[footer_middle]]
+name = "Overview"
+url = "olympiad/"
+weight = 1
+
+[[footer_middle]]
+name = "2023"
+url = "olympiad/2023/"
+weight = 2
+
+[[footer_middle]]
+name = "2022"
+url = "olympiad/2022/"
+weight = 3
+
+[[footer_middle]]
+name = "Study Material"
+url = "https://www.iarcs.org.in/inoi/online-study-material/index.php"
+weight = 4
+
+[[footer_right]]
+name = "Contact"
+url = "contact/"
+weight = 1
+
+# footer menu right
+[[footer_right]]
+name = "Products"
+url = "products/"
+weight = 2
+
+[[footer_right]]
+name = "Privacy Policy"
+url = "privacy-policy/"
+weight = 3
+
+[[footer_right]]
+name = "Terms & Conditions"
+url = "terms-conditions/"
+weight = 4

@@ -1,0 +1,103 @@
+{{define "main"}}
+
+
+{{ partial "page-header.html" . }}
+
+<p>&nbsp;</p>
+
+{{with .Params.banner}}
+<section class="section {{with .background_class}}{{.}} {{end}}">
+  <div class="container">
+    <div class="row align-items-center justify-content-center">
+      <div class="col-lg-5 col-md-10 mb-5 mb-lg-0">
+        <div class="pe-0 pe-lg-5 text-center text-lg-start">
+          <h1 class="section-title h2">{{ .title | markdownify }}</h1>
+          <p class="mb-5">{{ .content | markdownify }}</p>
+          {{ if .button.enable }}
+          {{ with .button }}
+          <a href="{{ .link | relLangURL }}" title="{{ .label }}" class="btn btn-outline-primary">{{ .label }}</a>
+          {{ end }}
+          {{ end }}
+        </div>
+      </div>
+      <div class="col-lg-7 text-center">
+        {{ partial "image" (dict "Src" .image "Alt" .Title "Class" "rounded-2 shadow" ) }}
+      </div>
+    </div>
+  </div>
+</section>
+{{end}}
+
+<!-- clients_logo_slider -->
+{{ if .Params.clients_logo_slider.enable }}
+{{ with .Params.clients_logo_slider }}
+<section class="section overflow-hidden">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center mb-5">
+        <h2 class="h6">{{.title | markdownify}}</h2>
+      </div>
+      <div class="col-12">
+        <div class="swiper brand-carousel">
+          <div class="swiper-wrapper">
+            {{ range .logos }}
+            <div class="swiper-slide brand-item d-flex align-items-center justify-content-center">
+              {{ partial "image" (dict "Src" . "Alt" "Brands logo" "Size" "x35") }}
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}
+<!-- clients_logo_slider -->
+
+<section class="section">
+  <div class="container">
+    <div class="row gx-6 justify-content-center">
+      <div class="col-lg-8 col-md-10">
+        <div class="pe-0 pe-lg-5">
+          <div class="content">
+            {{.Content}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section pb-0">
+  <div class="container text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 mx-auto">
+          <h2 class="h2 mb-3">Archives</h2>
+          {{ with .Params.subtitle }}
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="open-position" class="section">
+  <div class="container">
+    <div class="row g-5">
+      {{range (where site.RegularPages "Section" "olympiad").Reverse}}
+      <div class="col-lg-6 col-md-6">
+        <div class="p-5 border rounded-2 h-100 is-hoverable position-relative">
+          <h5 class="mb-2">{{.Title | markdownify}}</h5>
+          <p>{{.Params.category | markdownify}}</p>
+          <a href="{{.RelPermalink}}" class="mb-0 text-primary fw-500 mt-2 btn-link stretched-link">{{i18n `find_out_more`}} <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+      {{end}}
+    </div>
+  </div>
+</section>
+
+{{end}}
