@@ -88,7 +88,7 @@
   <div class="container">
     <div class="row g-5">
       {{range (where site.RegularPages "Section" "olympiad").Reverse}}
-      <div class="col-lg-6 col-md-6">
+      <div class="col-lg-4 col-md-4">
         <div class="p-5 border rounded-2 h-100 is-hoverable position-relative">
           <h5 class="mb-2">{{.Title | markdownify}}</h5>
           <p>{{.Params.category | markdownify}}</p>
